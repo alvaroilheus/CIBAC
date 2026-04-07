@@ -24,6 +24,8 @@ Este projeto foi construído utilizando as seguintes tecnologias web fundamentai
 *  Efeitos visuais para melhorar a experiência do usuário.
 *  Exibição de notícias em destaque.
 *  Categorização de matérias (Tecnologia, Indústria, Cursos, etc.).
+*  Navegação para contato e parceiros.
+*  Galeria de videos e fotos.
 
 ##  Design Visual
 
@@ -34,9 +36,9 @@ A identidade visual do site foi pensada para ser limpa e focar na legibilidade d
 * **Textos (Corpo):** Exo 2
 
 ### Paleta de Cores
-* 🔴 **Primária:** Vermelho (`#e31717`)
-* ⚪ **Secundária:** Branco (`#e2eaec`)
-* ⚫ **Fundo:** Preto (`#080810`)
+* **Primária:** Vermelho (`#e31717`)
+* **Secundária:** Branco (`#e2eaec`)
+* **Fundo:** Preto (`#080810`)
 
 ##  Equipe
 
