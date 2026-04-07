@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  SENAI SANTOS DUMONT — REVISTA DIGITAL
+  Arquivo: index.html
+  Versão: MVP 1.0
+  Descrição: Publicação editorial digital — estrutura principal
+  
+  INSTRUÇÕES DE EDIÇÃO:
+  Busque pelos comentários marcados com "EDITAR:" para
+  encontrar rapidamente os pontos de personalização.
+  
+  ESTRUTURA DE ARQUIVOS:
+  index.html        → Este arquivo (estrutura/conteúdo)
+  css/styles.css    → Estilos e design visual
+  js/script.js      → Interatividade e animações
+  img/              → Pasta para imagens (adicionar aqui)
+  ============================================================
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- EDITAR: título, descrição e palavras-chave do site -->
+  <title>SENAI Santos Dumont | Revista Digital</title>
+  <meta name="description" content="A publicação digital do SENAI Santos Dumont — notícias, projetos e inovação em educação técnica no Vale do Paraíba.">
+  <meta name="keywords"    content="SENAI, Santos Dumont, São José dos Campos, educação técnica, inovação, mecatrônica, tecnologia">
+  <meta name="author"      content="SENAI Santos Dumont">
+
+  <!-- Open Graph (compartilhamento em redes sociais) -->
+  <!-- EDITAR: imagem e URL de compartilhamento -->
+  <meta property="og:title"       content="SENAI Santos Dumont | Revista Digital">
+  <meta property="og:description" content="A publicação digital do SENAI Santos Dumont.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://senai-sd.com.br/revista"> <!-- EDITAR: URL real -->
+  <!-- <meta property="og:image" content="img/og-cover.jpg"> --> <!-- EDITAR: descomentar e adicionar imagem -->
+
+  <!-- Favicon -->
+  <!-- EDITAR: adicionar favicon real -->
+  <!-- <link rel="icon" type="image/png" href="img/favicon.png"> -->
+
+  <!-- Fonte: carregada via CSS (@import no styles.css) -->
+
+  <!-- Estilos externos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <!-- ─────────────────────────────────────────
+       BARRA DE PROGRESSO DE LEITURA
+  ──────────────────────────────────────────── -->
+  <div id="reading-progress" role="progressbar" aria-label="Progresso de leitura"></div>
+
+  <!-- ─────────────────────────────────────────
+       CANVAS DE PARTÍCULAS (fundo animado)
+  ──────────────────────────────────────────── -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- ─────────────────────────────────────────
+       NAVEGAÇÃO / MENU INICIAL
+  ──────────────────────────────────────────── -->
+  <header id="navbar" role="banner">
+
+    <!-- Logo da publicação -->
+    <!-- EDITAR: nome e subtítulo da publicação -->
+    <a href="#hero" class="nav-logo" aria-label="Ir para o início">
+      <div class="nav-logo-icon" aria-hidden="true">
+        <span>SD</span>
+      </div>
+      <div class="nav-logo-text">
+        SENAI SANTOS DUMONT
+        <span>REVISTA DIGITAL</span>
+      </div>
+    </a>
+
+    <!-- Menu de navegação principal -->
+    <!-- EDITAR: adicionar, remover ou renomear itens do menu -->
+    <nav aria-label="Menu principal">
+      <ul class="nav-menu" role="list">
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#editoriais">Editoriais</a></li>
+        <li><a href="#artigos">Artigos</a></li>
+        <li><a href="#multimidia">Multimídia</a></li>
+        <li><a href="#engajamento">Comunidade</a></li>
+        <li><a href="#parceiros">Parceiros</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botão hamburguer (mobile) -->
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </header>
+
+  <!-- ─────────────────────────────────────────
+       CONTEÚDO PRINCIPAL
+  ──────────────────────────────────────────── -->
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════
+         HERO — MANCHETE PRINCIPAL
+         A manchete mais importante da edição
+    ════════════════════════════════════════ -->
+    <section id="hero" aria-label="Manchete principal">
+
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="hero-diagonal"   aria-hidden="true"></div>
+
+      <div class="hero-content">
+
+        <!-- Texto da manchete esquerda -->
+        <div class="hero-text">
+
+          <!-- EDITAR: badge/categoria da manchete -->
+          <div class="hero-badge" aria-label="Edição especial">
+            Edição Especial • Março 2026
+          </div>
+
+          <!-- EDITAR: título principal da manchete -->
+          <h1 class="hero-title">
+            SENAI<br>
+            <span class="highlight">SANTOS DUMONT</span><br>
+            NA VANGUARDA<br>DA INDÚSTRIA 4.0
+          </h1>
+
+          <!-- EDITAR: subtítulo/introdução da manchete -->
+          <p class="hero-subtitle">
+            A unidade de São José dos Campos lidera projetos de inovação,
+            forma centenas de profissionais por ano e consolida parcerias
+            com as maiores empresas do Vale do Paraíba.
+          </p>
+
+          <!-- EDITAR: metadados do artigo (autor, data, tempo de leitura) -->
+          <div class="hero-meta">
+            <span>Por <span>Equipe Editorial</span></span>
+            <span>25 Mar 2026</span>
+            <span>8 min de leitura</span>
+          </div>
+
+          <!-- Botões de ação -->
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="#artigos" class="btn btn-primary">
+              ▶ Ler Artigo Completo
+            </a>
+            <a href="#editoriais" class="btn btn-outline">
+              Ver Editoriais
+            </a>
+          </div>
+
+        </div><!-- /hero-text -->
+
+        <!-- Card de destaque à direita do hero -->
+        <div class="hero-card animate-on-scroll delay-2">
+
+          <!-- EDITAR: substituir por <img src="img/hero-foto.jpg" alt="Descrição"> -->
+          <div class="hero-card-image" aria-label="Imagem principal do artigo em destaque">
+            <div class="decorative-circuit" aria-hidden="true"></div>
+          </div>
+
+          <div class="hero-card-body">
+            <!-- EDITAR: categoria do artigo em destaque -->
+            <div class="hero-card-category">⚡ Destaque da Semana</div>
+
+            <!-- EDITAR: título do artigo em destaque -->
+            <h2 class="hero-card-title">
+              Alunos de Mecatrônica Conquistam 1º Lugar na Olimpíada Estadual de Robótica
+            </h2>
+
+            <!-- EDITAR: resumo/lead do artigo em destaque -->
+            <p class="hero-card-excerpt">
+              A equipe "Fênix Robotics" do SENAI Santos Dumont superou 47 escolas
+              técnicas do estado com um robô autônomo capaz de realizar triagem
+              de resíduos hospitalares.
+            </p>
+          </div>
+
+        </div><!-- /hero-card -->
+
+      </div><!-- /hero-content -->
+
+    </section><!-- /hero -->
+
+
+    <!-- ═══════════════════════════════════════
+         ESTATÍSTICAS DA UNIDADE
+    ════════════════════════════════════════ -->
+    <section aria-label="Números da unidade" style="background:var(--color-bg-alt);padding:var(--spacing-xl) 0;">
+      <div class="container">
+
+        <!-- EDITAR: alterar os números e rótulos conforme os dados reais da unidade -->
+        <div class="stats-row">
+          <div class="stat-item animate-on-scroll">
+            <!-- data-count → valor final animado pelo JS -->
+            <span class="stat-number" data-count="1200">0</span>
+            <span class="stat-label">Alunos Matriculados</span>
+          </div>
+          <div class="stat-item animate-on-scroll delay-1">
+            <span class="stat-number" data-count="18">0</span>
+            <span class="stat-label">Cursos Técnicos</span>
+          </div>
+          <div class="stat-item animate-on-scroll delay-2">
+            <span class="stat-number" data-count="94">0</span>
+            <span class="stat-label">% de Empregabilidade</span>
+          </div>
+          <div class="stat-item animate-on-scroll delay-3">
+            <span class="stat-number" data-count="47">0</span>
+            <span class="stat-label">Empresas Parceiras</span>
+          </div>
+        </div><!-- /stats-row -->
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         EDITORIAIS — BLOCOS DO SENAI
+         Cada bloco representa uma área temática
+    ════════════════════════════════════════ -->
+    <section id="editoriais" class="section" aria-label="Editoriais por área">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <!-- EDITAR: rótulo e título da seção -->
+            <div class="section-label">Esta Edição</div>
+            <h2 class="section-title">
+              Editoriais <span class="accent">em Destaque</span>
+            </h2>
+          </div>
+          <!-- EDITAR: link para arquivo de edições anteriores -->
+          <a href="#" class="btn btn-outline" style="font-size:0.6rem;padding:8px 16px;">
+            Ver Todas as Edições →
+          </a>
+        </div>
+
+        <!-- Grade de cards editoriais -->
+        <!-- 
+          ESTRUTURA DOS BLOCOS:
+          - Formação Técnica (laranja — padrão)
+          - Inovação & Tecnologia (ciano)
+          - Projetos & Parceiros (verde)
+          - Eventos & Comunidade (rosa)
+          
+          EDITAR: adicionar/remover cards conforme necessidade
+          Para abrir modal, usar: data-article="ID-DO-ARTIGO"
+          IDs dos artigos estão definidos em js/script.js
+        -->
+        <div class="editorial-grid">
+
+          <!-- Card 1 — DESTAQUE (ocupa 2 colunas e 2 linhas) -->
+          <article class="editorial-card featured animate-on-scroll" data-article="art-1" role="article" tabindex="0">
+            <!-- EDITAR: substituir por imagem real -->
+            <div class="card-image">
+              <div class="card-image-placeholder">
+                <span class="card-image-icon">🤖</span>
+                <!-- EDITAR: src da imagem do card -->
+                <!-- <img src="img/mecatronica-turma.jpg" alt="Turma de Mecatrônica"> -->
+                FORMAÇÃO TÉCNICA<br>
+                <small>img/mecatronica-turma.jpg</small>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- EDITAR: tag/categoria do card -->
+              <span class="card-tag">Formação Técnica</span>
+              <!-- EDITAR: título e resumo do artigo -->
+              <h3 class="card-title">SENAI Forma Nova Turma em Mecatrônica com Foco em Indústria 4.0</h3>
+              <p class="card-excerpt">
+                Os 32 formandos desenvolveram projetos práticos de automação, CLPs e IoT,
+                com um braço robótico de visão computacional que já despertou interesse
+                de empresas parceiras da região. A próxima turma tem vagas abertas para maio.
+              </p>
+            </div>
+            <div class="card-footer">
+              <!-- EDITAR: autor e data do artigo -->
+              <span>Equipe Editorial</span>
+              <span>25 Mar 2026</span>
+            </div>
+          </article>
+
+          <!-- Card 2 — Inovação & Tecnologia -->
+          <article class="editorial-card animate-on-scroll delay-1" data-article="art-2" role="article" tabindex="0">
+            <div class="card-image">
+              <div class="card-image-placeholder">
+                <span class="card-image-icon">⚡</span>
+                <!-- EDITAR: <img src="img/lab-iot.jpg" alt="Laboratório de IoT"> -->
+                INOVAÇÃO & TECNOLOGIA<br>
+                <small>img/lab-iot.jpg</small>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag tag-tech">Inovação & Tecnologia</span>
+              <h3 class="card-title">Laboratório de IoT Recebe Equipamentos de Última Geração</h3>
+              <p class="card-excerpt">
+                Investimento de R$ 380 mil transforma o espaço em referência
+                estadual em edge computing e manufatura aditiva.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span>Redação</span>
+              <span>18 Mar 2026</span>
+            </div>
+          </article>
+
+          <!-- Card 3 — Projetos & Parceiros -->
+          <article class="editorial-card animate-on-scroll delay-2" data-article="art-3" role="article" tabindex="0">
+            <div class="card-image">
+              <div class="card-image-placeholder">
+                <span class="card-image-icon">🤝</span>
+                <!-- EDITAR: <img src="img/embraer-parceria.jpg" alt="Parceria Embraer"> -->
+                PROJETOS & PARCEIROS<br>
+                <small>img/embraer-parceria.jpg</small>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag tag-proj">Projetos & Parceiros</span>
+              <h3 class="card-title">Parceria com Embraer Amplia Vagas de Estágio em 45 Posições</h3>
+              <p class="card-excerpt">
+                Novo convênio garante workshops mensais, visitas técnicas
+                e bolsas de R$ 1.200 mensais para alunos selecionados.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span>Rel. Empresarial</span>
+              <span>10 Mar 2026</span>
+            </div>
+          </article>
+
+          <!-- Card 4 — Eventos & Comunidade -->
+          <article class="editorial-card animate-on-scroll delay-3" role="article" tabindex="0">
+            <div class="card-image">
+              <div class="card-image-placeholder">
+                <span class="card-image-icon">🏆</span>
+                <!-- EDITAR: <img src="img/olimpiada.jpg" alt="Olimpíada de Robótica"> -->
+                EVENTOS & COMUNIDADE<br>
+                <small>img/olimpiada.jpg</small>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag tag-event">Eventos & Comunidade</span>
+              <h3 class="card-title">SENAI-SD Sedia Feira de Inovação com Mais de 800 Visitantes</h3>
+              <p class="card-excerpt">
+                Evento reuniu estudantes, ex-alunos e empresas do setor
+                tecnológico em um dia de pitch, exposições e networking.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span>Comunicação</span>
+              <span>5 Mar 2026</span>
+            </div>
+          </article>
+
+        </div><!-- /editorial-grid -->
+
+      </div>
+    </section><!-- /editoriais -->
+
+
+    <!-- ═══════════════════════════════════════
+         CORPO DOS ARTIGOS
+         Artigo principal + sidebar de relacionados
+    ════════════════════════════════════════ -->
+    <section id="artigos" class="section section-alt" aria-label="Artigos">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <div class="section-label">Leitura da Semana</div>
+            <h2 class="section-title">
+              Artigo <span class="accent">em Destaque</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="article-layout">
+
+          <!-- Artigo principal -->
+          <article class="article-main animate-on-scroll" role="article">
+
+            <!-- Cabeçalho do artigo -->
+            <div class="article-header">
+              <!-- EDITAR: categoria, título e dados do artigo principal -->
+              <span class="card-tag tag-tech">Inovação & Tecnologia</span>
+              <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:900;line-height:1.2;margin:1rem 0;">
+                Como o SENAI Santos Dumont Está Preparando a Próxima Geração de Engenheiros para a Era Digital
+              </h2>
+              <div class="hero-meta">
+                <!-- EDITAR: autor, data e tempo de leitura -->
+                <span>Por <span>Prof. Dr. Carlos Mendes</span></span>
+                <span>22 Mar 2026</span>
+                <span>12 min de leitura</span>
+              </div>
+            </div>
+
+            <!-- Foto e legenda -->
+            <!-- EDITAR: inserir imagem real com <img> e atualizar legenda -->
+            <div class="article-photo" aria-label="Foto ilustrativa do artigo">
+              <div class="photo-grid" aria-hidden="true"></div>
+              <div class="photo-placeholder" aria-hidden="true">📸</div>
+            </div>
+            <!-- EDITAR: legenda da foto e crédito do fotógrafo -->
+            <p class="photo-caption">
+              Alunos no laboratório de automação durante aula prática de programação de CLPs.
+              <!-- Foto: EDITAR → [Nome do Fotógrafo] / SENAI Santos Dumont -->
+              <em>Foto: Arquivo SENAI / Reprodução</em>
+            </p>
+
+            <!-- Corpo do texto do artigo -->
+            <div class="article-body">
+
+              <!-- EDITAR: texto completo do artigo (substituir o conteúdo fictício abaixo) -->
+              <p class="dropcap">
+                A transformação digital nas indústrias do Vale do Paraíba criou uma demanda
+                urgente por profissionais que dominam não apenas a teoria, mas também a prática
+                das novas tecnologias. O SENAI Santos Dumont está no centro dessa mudança,
+                reformulando seus currículos e modernizando seus laboratórios para formar
+                profissionais alinhados às exigências do mercado atual.
+              </p>
+
+              <p>
+                Desde 2024, a unidade implementou o conceito de "aprendizagem baseada em projetos reais",
+                onde empresas parceiras submetem desafios genuínos que os alunos precisam resolver
+                ao longo do semestre. O resultado tem sido surpreendente: mais de 78% dos projetos
+                desenvolvidos foram incorporados ou adaptados pelas próprias empresas proponentes.
+              </p>
+
+              <!-- Citação em destaque -->
+              <blockquote class="article-quote">
+                <!-- EDITAR: texto e autor da citação -->
+                <p>"Quando o aluno resolve um problema real de uma empresa real, o aprendizado
+                é completamente diferente. Ele vê o impacto do seu trabalho e isso muda tudo."</p>
+                <cite>— Prof. Ana Lima, Coordenadora de Inovação Pedagógica</cite>
+              </blockquote>
+
+              <p>
+                O programa de estágios integrados tem sido outro diferencial. Enquanto a maioria
+                das instituições tratam o estágio como etapa final, o SENAI Santos Dumont integra
+                vivências profissionais desde o primeiro módulo do curso, com visitas técnicas
+                mensais e projetos de extensão nas empresas parceiras.
+              </p>
+
+              <p>
+                Os resultados falam por si: a taxa de empregabilidade dos egressos atingiu 94%
+                em 2025, com a maior parte dos ex-alunos sendo contratados ainda antes da
+                conclusão do curso. O tempo médio de absorção pelo mercado caiu de 8 meses
+                para menos de 60 dias após a formatura.
+              </p>
+
+            </div><!-- /article-body -->
+
+          </article><!-- /article-main -->
+
+          <!-- Sidebar — Artigos Relacionados -->
+          <aside class="article-sidebar" aria-label="Artigos relacionados">
+
+            <!-- Bloco de artigos recentes -->
+            <div class="sidebar-card animate-on-scroll delay-1" data-article="art-2" tabindex="0">
+              <div class="card-tag tag-tech" style="font-size:0.5rem;padding:2px 8px;margin-bottom:0.5rem;display:inline-block;">Tecnologia</div>
+              <!-- EDITAR: título do artigo relacionado -->
+              <h4 class="sidebar-card-title">Laboratório de IoT Recebe Equipamentos de Última Geração</h4>
+              <div class="hero-meta" style="font-size:0.55rem;margin:0;">
+                <span>18 Mar 2026</span>
+                <span>5 min</span>
+              </div>
+            </div>
+
+            <div class="sidebar-card animate-on-scroll delay-2" data-article="art-3" tabindex="0">
+              <div class="card-tag tag-proj" style="font-size:0.5rem;padding:2px 8px;margin-bottom:0.5rem;display:inline-block;">Parceiros</div>
+              <!-- EDITAR: título do artigo relacionado -->
+              <h4 class="sidebar-card-title">Parceria com Embraer Amplia Oportunidades de Estágio</h4>
+              <div class="hero-meta" style="font-size:0.55rem;margin:0;">
+                <span>10 Mar 2026</span>
+                <span>4 min</span>
+              </div>
+            </div>
+
+            <div class="sidebar-card animate-on-scroll delay-3" tabindex="0">
+              <div class="card-tag tag-event" style="font-size:0.5rem;padding:2px 8px;margin-bottom:0.5rem;display:inline-block;">Eventos</div>
+              <!-- EDITAR: título do artigo relacionado -->
+              <h4 class="sidebar-card-title">Feira de Inovação Recebe 800 Visitantes em São José dos Campos</h4>
+              <div class="hero-meta" style="font-size:0.55rem;margin:0;">
+                <span>5 Mar 2026</span>
+                <span>3 min</span>
+              </div>
+            </div>
+
+            <!-- Bloco de Tags/Temas -->
+            <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--spacing-md);">
+              <h4 style="font-family:var(--font-display);font-size:0.65rem;letter-spacing:0.2em;color:var(--color-primary);text-transform:uppercase;margin-bottom:1rem;">Temas</h4>
+              <!-- EDITAR: lista de temas/tags do site -->
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                <span class="card-tag">Mecatrônica</span>
+                <span class="card-tag tag-tech">IoT</span>
+                <span class="card-tag tag-proj">Estágio</span>
+                <span class="card-tag tag-event">Robótica</span>
+                <span class="card-tag">Automação</span>
+                <span class="card-tag tag-tech">Indústria 4.0</span>
+                <span class="card-tag tag-proj">Embraer</span>
+                <span class="card-tag tag-event">Olimpíada</span>
+              </div>
+            </div>
+
+          </aside><!-- /article-sidebar -->
+
+        </div><!-- /article-layout -->
+
+      </div>
+    </section><!-- /artigos -->
+
+
+    <!-- ═══════════════════════════════════════
+         FOTOS E MULTIMÍDIA
+         Galeria de vídeos, podcasts e galerias de imagens
+    ════════════════════════════════════════ -->
+    <section id="multimidia" class="section" aria-label="Conteúdo multimídia">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <div class="section-label">Galeria & Vídeos</div>
+            <h2 class="section-title">
+              Multimídia <span class="accent">& Cobertura</span>
+            </h2>
+          </div>
+        </div>
+
+        <!-- EDITAR: adicionar/remover cards de mídia conforme necessidade -->
+        <div class="media-grid">
+
+          <!-- Card de Vídeo 1 -->
+          <div class="media-card animate-on-scroll" tabindex="0" role="article">
+            <div class="media-thumbnail" aria-label="Thumbnail do vídeo">▶️</div>
+            <!-- Overlay com botão de play -->
+            <div class="media-overlay" aria-hidden="true">
+              <div class="media-play-btn">▶</div>
+              <!-- EDITAR: link real do vídeo -->
+              <a href="#" class="btn btn-outline" style="font-size:0.6rem;padding:6px 14px;">Assistir</a>
+            </div>
+            <div class="media-info">
+              <div class="media-type">📹 Vídeo</div>
+              <!-- EDITAR: título e duração do vídeo -->
+              <div class="media-title">Dia a Dia no Laboratório de Robótica — 12min</div>
+            </div>
+          </div>
+
+          <!-- Card de Vídeo 2 -->
+          <div class="media-card animate-on-scroll delay-1" tabindex="0" role="article">
+            <div class="media-thumbnail" aria-label="Thumbnail do vídeo">🎥</div>
+            <div class="media-overlay" aria-hidden="true">
+              <div class="media-play-btn">▶</div>
+              <!-- EDITAR: link real do vídeo -->
+              <a href="#" class="btn btn-outline" style="font-size:0.6rem;padding:6px 14px;">Assistir</a>
+            </div>
+            <div class="media-info">
+              <div class="media-type">📹 Vídeo</div>
+              <!-- EDITAR: título e duração do vídeo -->
+              <div class="media-title">Cerimônia de Formatura — Turma Mecatrônica 2025 — 8min</div>
+            </div>
+          </div>
+
+          <!-- Card de Podcast -->
+          <div class="media-card animate-on-scroll delay-2" tabindex="0" role="article">
+            <div class="media-thumbnail" aria-label="Capa do podcast">🎙️</div>
+            <div class="media-overlay" aria-hidden="true">
+              <div class="media-play-btn">▶</div>
+              <!-- EDITAR: link real do podcast ou arquivo de áudio -->
+              <a href="#" class="btn btn-outline" style="font-size:0.6rem;padding:6px 14px;">Ouvir</a>
+            </div>
+            <div class="media-info">
+              <div class="media-type">🎙️ Podcast</div>
+              <!-- EDITAR: título e duração do episódio -->
+              <div class="media-title">SD Cast Ep. 12 — O Futuro da Educação Técnica — 45min</div>
+            </div>
+          </div>
+
+        </div><!-- /media-grid -->
+
+        <!-- Galeria de Fotos (grid simples) -->
+        <div style="margin-top:var(--spacing-lg);">
+          <h3 style="font-family:var(--font-display);font-size:0.8rem;letter-spacing:0.1em;color:var(--color-text-muted);text-transform:uppercase;margin-bottom:1rem;">
+            📸 Galeria de Fotos
+          </h3>
+          <!-- EDITAR: substituir as divs abaixo por <img src="..."> reais com alt descritivo -->
+          <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0.5rem;">
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:none;transition:var(--transition);" title="img/foto-1.jpg">🏭</div>
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:none;transition:var(--transition);" title="img/foto-2.jpg">🎓</div>
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:none;transition:var(--transition);" title="img/foto-3.jpg">🤖</div>
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:none;transition:var(--transition);" title="img/foto-4.jpg">⚙️</div>
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:none;transition:var(--transition);" title="img/foto-5.jpg">🔬</div>
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:none;transition:var(--transition);" title="img/foto-6.jpg">🏆</div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /multimidia -->
+
+
+    <!-- ═══════════════════════════════════════
+         ENGAJAMENTO — Newsletter + Depoimentos
+    ════════════════════════════════════════ -->
+    <section id="engajamento" class="section section-alt" aria-label="Comunidade e engajamento">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <div class="section-label">Comunidade SENAI-SD</div>
+            <h2 class="section-title">
+              Conecte-se <span class="accent">com a Gente</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="engagement-layout">
+
+          <!-- Newsletter -->
+          <div class="newsletter-box animate-on-scroll">
+            <h3>📬 Receba a Revista Direto no seu Email</h3>
+            <!-- EDITAR: texto da newsletter -->
+            <p>
+              Toda semana, os melhores conteúdos do SENAI Santos Dumont — notícias,
+              oportunidades de emprego, eventos e muito mais — direto na sua caixa de entrada.
+            </p>
+            <!-- Formulário de newsletter (backend a integrar) -->
+            <!-- Ver js/script.js → módulo 8 para integrar com API real -->
+            <form class="newsletter-form" id="newsletter-form" novalidate>
+              <input
+                type="email"
+                class="input-field"
+                id="newsletter-email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+                aria-label="Seu endereço de email"
+                required
+              >
+              <button type="submit" class="btn btn-primary" id="newsletter-btn">
+                Inscrever
+              </button>
+            </form>
+            <!-- Política de privacidade -->
+            <!-- EDITAR: link para a política de privacidade real -->
+            <p style="font-size:0.75rem;color:var(--color-text-dim);margin-top:0.75rem;">
+              Sem spam. Cancelamento fácil. Consulte nossa
+              <a href="#" style="color:var(--color-primary);">Política de Privacidade</a>.
+            </p>
+          </div>
+
+          <!-- Depoimentos / Comentários -->
+          <div class="testimonials-box animate-on-scroll delay-1">
+            <h3 style="font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:1.5rem;">
+              💬 O que a Comunidade Diz
+            </h3>
+
+            <!-- EDITAR: substituir pelos depoimentos reais dos alunos/ex-alunos -->
+            <div class="testimonial-item">
+              <p class="testimonial-text">
+                "O SENAI Santos Dumont mudou completamente minha trajetória. Entrei sem saber
+                nada de programação e saí com uma vaga na Embraer. A estrutura e os professores
+                são incríveis."
+              </p>
+              <div class="testimonial-author">
+                <!-- EDITAR: nome do depoente, curso e turma -->
+                João Almeida · Técnico em Mecatrônica · Turma 2024
+              </div>
+            </div>
+
+            <div class="testimonial-item">
+              <p class="testimonial-text">
+                "As aulas práticas no laboratório de IoT me deram confiança para enfrentar
+                qualquer desafio técnico. Hoje coordeno uma equipe de automação."
+              </p>
+              <div class="testimonial-author">
+                <!-- EDITAR: nome do depoente, curso e turma -->
+                Fernanda Costa · Técnica em Automação · Turma 2023
+              </div>
+            </div>
+
+            <div class="testimonial-item">
+              <p class="testimonial-text">
+                "Os projetos com empresas reais foram o grande diferencial. Quando cheguei
+                na empresa, já sabia exatamente o que fazer."
+              </p>
+              <div class="testimonial-author">
+                <!-- EDITAR: nome do depoente, curso e turma -->
+                Ricardo Oliveira · Técnico em Manutenção Automotiva · Turma 2025
+              </div>
+            </div>
+
+          </div><!-- /testimonials-box -->
+
+        </div><!-- /engagement-layout -->
+
+      </div>
+    </section><!-- /engajamento -->
+
+
+    <!-- ═══════════════════════════════════════
+         PARCEIROS & MONETIZAÇÃO
+    ════════════════════════════════════════ -->
+    <section id="parceiros" class="section" aria-label="Parceiros e apoiadores">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <div class="section-label">Ecossistema de Inovação</div>
+            <h2 class="section-title">
+              Parceiros & <span class="accent">Apoiadores</span>
+            </h2>
+          </div>
+        </div>
+
+        <!-- EDITAR: adicionar logos e links reais dos parceiros -->
+        <!-- Substituir os emojis por <img src="img/logo-parceiro.png" alt="Nome do Parceiro"> -->
+        <div class="partners-grid animate-on-scroll">
+
+          <!-- EDITAR: cada partner-card deve ter o logo e nome do parceiro real -->
+          <div class="partner-card">
+            <div class="partner-logo">✈️</div>
+            <div class="partner-name">Embraer</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">🚗</div>
+            <div class="partner-name">General Motors</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">🔧</div>
+            <div class="partner-name">Petrobras</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">💡</div>
+            <div class="partner-name">Vale S.A.</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-logo">🏗️</div>
+            <div class="partner-name">Raytheon</div>
+          </div>
+
+        </div>
+
+        <!-- Banner de Patrocínio / Apoio Institucional -->
+        <!-- EDITAR: personalizar mensagem e link do banner de parceria -->
+        <div class="sponsor-banner animate-on-scroll" style="margin-top:2rem;">
+          <div class="sponsor-label">✦ Parceria Institucional ✦</div>
+          <h3 style="color:var(--color-primary);">Sua Empresa no Futuro da Educação Técnica</h3>
+          <p style="color:var(--color-text-muted);max-width:500px;margin:0.5rem auto 1.5rem;">
+            <!-- EDITAR: mensagem de proposta de parceria -->
+            Junte-se às empresas que já transformam o mercado formando
+            profissionais no SENAI Santos Dumont.
+          </p>
+          <!-- EDITAR: email ou link de contato para parcerias -->
+          <a href="mailto:parcerias@senai-sd.com.br" class="btn btn-primary">
+            Seja um Parceiro →
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /parceiros -->
+
+
+    <!-- ═══════════════════════════════════════
+         LINKS ÚTEIS (seção rápida)
+    ════════════════════════════════════════ -->
+    <section aria-label="Links úteis" style="background:var(--color-bg-alt);padding:var(--spacing-xl) 0;">
+      <div class="container">
+        <h2 style="font-family:var(--font-display);font-size:1rem;letter-spacing:0.1em;color:var(--color-text-muted);text-transform:uppercase;text-align:center;margin-bottom:2rem;">
+          🔗 Links Importantes
+        </h2>
+        <!-- EDITAR: adicionar/remover/atualizar links conforme necessidade -->
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+          <a href="https://www.sp.senai.br" target="_blank" rel="noopener" class="btn btn-outline">Portal SENAI SP</a>
+          <a href="#" class="btn btn-outline">Calendário Acadêmico</a>
+          <a href="#" class="btn btn-outline">Processo Seletivo</a>
+          <a href="#" class="btn btn-outline">Bolsas e Descontos</a>
+          <a href="#" class="btn btn-outline">Biblioteca Digital</a>
+          <a href="#" class="btn btn-outline">Empregabilidade</a>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /main-content -->
+
+
+  <!-- ─────────────────────────────────────────
+       MODAL DE ARTIGO EXPANDIDO
+       Controlado pelo js/script.js → módulo 6
+  ──────────────────────────────────────────── -->
+  <div id="article-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div>
+          <!-- Título do artigo no modal — preenchido dinamicamente pelo JS -->
+          <h2 id="modal-title" style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;line-height:1.3;"></h2>
+        </div>
+        <button class="modal-close" id="modal-close-btn" aria-label="Fechar artigo">✕</button>
+      </div>
+
+      <!-- Corpo do artigo — preenchido dinamicamente pelo JS -->
+      <div class="modal-body" id="modal-body"></div>
+
+    </div>
+  </div>
+
+
+  <!-- ─────────────────────────────────────────
+       FOOTER / RODAPÉ
+  ──────────────────────────────────────────── -->
+  <footer id="contato" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Coluna 1: Identidade da publicação -->
+        <div class="footer-brand">
+          <!-- EDITAR: nome e descrição da publicação -->
+          <span class="footer-logo">SENAI SANTOS DUMONT</span>
+          <p>
+            A publicação digital que conecta alunos, professores, ex-alunos
+            e parceiros ao ecossistema de inovação e educação técnica do
+            SENAI Santos Dumont em São José dos Campos.
+          </p>
+          <!-- EDITAR: links das redes sociais -->
+          <div class="social-links" aria-label="Redes sociais">
+            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="YouTube"   title="YouTube">▶️</a>
+            <a href="#" class="social-link" aria-label="LinkedIn"  title="LinkedIn">💼</a>
+            <a href="#" class="social-link" aria-label="WhatsApp"  title="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Seções do site -->
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <!-- EDITAR: atualizar links conforme estrutura do site -->
+          <ul>
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#editoriais">Editoriais</a></li>
+            <li><a href="#artigos">Artigos</a></li>
+            <li><a href="#multimidia">Multimídia</a></li>
+            <li><a href="#parceiros">Parceiros</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Cursos -->
+        <div class="footer-col">
+          <h4>Cursos</h4>
+          <!-- EDITAR: lista de cursos oferecidos pela unidade -->
+          <ul>
+            <li><a href="#">Mecatrônica</a></li>
+            <li><a href="#">Dev. de Sistemas</a></li>
+            <li><a href="#">Automação Industrial</a></li>
+            <li><a href="#">Manutenção Automotiva</a></li>
+            <li><a href="#">Eletrotécnica</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Contatos -->
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <!-- EDITAR: endereço, telefone e email reais da unidade -->
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <span>Av. Cassiano Ricardo, 601 — Jd. Aquarius<br>São José dos Campos, SP</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <!-- EDITAR: telefone real -->
+            <a href="tel:+551200000000" style="color:var(--color-text-muted);text-decoration:none;">
+              (12) 0000-0000
+            </a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <!-- EDITAR: email real de contato -->
+            <a href="mailto:revista@senai-sd.com.br" style="color:var(--color-text-muted);text-decoration:none;">
+              revista@senai-sd.com.br
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <!-- Linha de créditos -->
+      <div class="footer-bottom">
+        <!-- EDITAR: ano e créditos -->
+        <span>© 2026 SENAI Santos Dumont. Todos os direitos reservados.</span>
+        <span>Desenvolvido como MVP educacional — SENAI Santos Dumont · SENAI SP</span>
+        <!-- EDITAR: links de política de privacidade e termos de uso -->
+        <span>
+          <a href="#" style="color:var(--color-text-dim);text-decoration:none;">Privacidade</a>
+          &nbsp;·&nbsp;
+          <a href="#" style="color:var(--color-text-dim);text-decoration:none;">Termos de Uso</a>
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ─────────────────────────────────────────
+       JAVASCRIPT — carregado no final para performance
+       defer: executa após parse do HTML
+  ──────────────────────────────────────────── -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
