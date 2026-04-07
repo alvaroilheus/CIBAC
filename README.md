@@ -24,7 +24,7 @@ Este projeto foi construído utilizando as seguintes tecnologias web fundamentai
 *  Efeitos visuais para melhorar a experiência do usuário.
 *  Exibição de notícias em destaque.
 *  Categorização de matérias (Tecnologia, Indústria, Cursos, etc.).
-*  Navegação para contato e parceiros.
+*  Navegação para contato e parceiros(Embraer, General Motors, etc.).
 *  Galeria de videos e fotos.
 
 ##  Design Visual
